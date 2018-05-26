@@ -10,7 +10,12 @@ Many new jailbreak devs are find it difficult and/or a hassle to run apps as roo
 - Grab rocketbootstrap headers (https://github.com/theos/headers/tree/05405174749d912f7726121fcb5f27de73af0f08/AppSupport)
 - Take any xcode project and link it with librocketbootstrap.dylib (Take this from your device, it's on /usr/lib) and AppSupport.tbd (download from this repo)
 - Include "rocketbootstrap.h" and "AppSupport/CPDistributedMessagingCenter.h" on your main.m file
-- Add this code on it
+- Add this code on it:
+    NSLog(@"uid now %d", getuid());
+    CPDistributedMessagingCenter *messageCenter = [CPDistributedMessagingCenter centerNamed:@"com.jakeashacks.rootme"];
+    rocketbootstrap_distributedmessagingcenter_apply(messageCenter);
+    [messageCenter sendMessageAndReceiveReplyName:@"rootme" userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", getpid()] forKey:@"pid"]];
+    NSLog(@"uid after %d", getuid());
 - Done! Enjoy!
 
 Notes:
