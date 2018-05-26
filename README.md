@@ -7,7 +7,7 @@ Many new jailbreak devs are find it difficult and/or a hassle to run apps as roo
 
 - Install rootme from my repo (https://jakeashacks.com/cydia) and run it, preferably using SSH on a computer or NewTerm 2. (This way you can terminate it when you're done using Control + C). 
 - Grab AppSupport headers and add them into your include path (https://github.com/theos/headers/tree/05405174749d912f7726121fcb5f27de73af0f08/AppSupport)
-- Grab rocketbootstrap headers (https://github.com/theos/headers/tree/05405174749d912f7726121fcb5f27de73af0f08/AppSupport)
+- Grab rocketbootstrap headers (https://github.com/rpetrich/RocketBootstrap/tree/ios10)
 - Take any xcode project and link it with librocketbootstrap.dylib (Take this from your device, it's on /usr/lib) and AppSupport.tbd (download from this repo)
 - Include "rocketbootstrap.h" and "AppSupport/CPDistributedMessagingCenter.h" on your main.m file
 - Add this code on it:
